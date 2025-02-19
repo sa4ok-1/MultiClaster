@@ -35,9 +35,14 @@ html {
   z-index: 2;
 }
 
-.out-circle {
-  border: 2px solid black;
+.outer-image {
   border-radius: 50%;
+  transition: scale 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.outer-image:hover {
+  scale: 1.5;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Зовнішнє коло */
@@ -55,16 +60,13 @@ html {
 
 /* Елементи всередині кола */
 .circle-item {
-  position: absolute;
   width: 70px;
   height: 70px;
-  background: red;
-  clip-path: polygon(20% 0%, 80% 0%, 90% 100%, 10% 100%);
+  transform: rotate(45deg);
+  clip-path: polygon(80% 0%, 20% 0%, 0% 100%, 100% 100%);
   transition: transform 0.5s ease-in-out;
-  border-bottom: 5px solid rgb(82, 128, 15); 
+  border-bottom: 5px solid rgb(82, 128, 15);
   display: block;
-  transform: rotate(180deg);
-  
 }
 
 /* Кнопки */
