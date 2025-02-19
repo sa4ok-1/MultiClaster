@@ -1,0 +1,138 @@
+/* Центруємо все */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+/* Контейнер для кола */
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+}
+
+/* Центральне коло */
+.center-circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.out-circle {
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+/* Зовнішнє коло */
+.circle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Елементи всередині кола */
+.circle-item {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: red;
+  clip-path: polygon(20% 0%, 80% 0%, 90% 100%, 10% 100%);
+  transition: transform 0.5s ease-in-out;
+  border-bottom: 5px solid rgb(82, 128, 15); 
+  display: block;
+  transform: rotate(180deg);
+  
+}
+
+/* Кнопки */
+.btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Ліва кнопка */
+.left {
+  top: 32%;
+  left: 78%;
+  transform: translate(37%, -50%);
+}
+
+/* Права кнопка  */
+.right {
+  top: 58%;
+  left: 78%;
+  transform: translate(37%, -50%);
+}
+
+/* Кнопка закриття */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.center-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.center-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  color: aquamarine;
+  background-color: gray;
+  border: none;
+  cursor: pointer;
+}
