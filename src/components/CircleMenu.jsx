@@ -21,7 +21,7 @@ const CircleMenu = () => {
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
   const radius = 150;
-  const imageAreaAngle = 270;
+  const imageAreaAngle = 160;
   const outerImage = "https://picsum.photos/150/150?random=10";
 
   useEffect(() => {

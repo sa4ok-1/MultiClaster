@@ -109,18 +109,17 @@ html {
   border-bottom: none;
 }
 
-/* Ліва кнопка */
+
 .left {
-  top: 24%;
-  left: 80%;
-  transform: rotate(346deg);
+  top: 23%;
+  left: 77%;
+  transform: rotate(336deg);
 }
 
-/* Права кнопка */
 .right {
   top: 66%;
-  left: 80%;
-  transform: rotate(190deg);
+  left: 78%;
+  transform: rotate(200deg);
 }
 
 .sticks-container {
@@ -143,31 +142,31 @@ html {
 }
 
 .stick:nth-child(1) {
-  transform: rotate(350deg);
+  transform: rotate(336deg);
 }
 .stick:nth-child(2) {
-  transform: rotate(351deg);
+  transform: rotate(340deg);
 }
 .stick:nth-child(3) {
-  transform: rotate(353deg);
+  transform: rotate(345deg);
 }
 .stick:nth-child(4) {
-  transform: rotate(356deg);
+  transform: rotate(350deg);
 }
 .stick:nth-child(5) {
-  transform: rotate(358deg);
+  transform: rotate(355deg);
 }
 .stick:nth-child(6) {
-  transform: rotate(360deg);
+  transform: rotate(0deg);
 }
 .stick:nth-child(7) {
-  transform: rotate(362deg);
+  transform: rotate(5deg);
 }
 .stick:nth-child(8) {
-  transform: rotate(364deg);
+  transform: rotate(10deg);
 }
 .stick:nth-child(9) {
-  transform: rotate(366deg);
+  transform: rotate(15deg);
 }
 
 .close-btn {
