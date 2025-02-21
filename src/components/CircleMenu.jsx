@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
@@ -11,32 +11,21 @@ const initialImages = [
   "https://picsum.photos/100/100?random=5",
   "https://picsum.photos/100/100?random=6",
   "https://picsum.photos/100/100?random=7",
+  "https://picsum.photos/100/100?random=8",
+  "https://picsum.photos/100/100?random=9",
+  "https://picsum.photos/100/100?random=10",
 ];
 
 const CircleMenu = () => {
   const [angle, setAngle] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
   const radius = 150;
-  const imageAreaAngle = 250;
+  const imageAreaAngle = 360;
   const outerImage = "https://picsum.photos/150/150?random=10";
 
-  useEffect(() => {
-    if (initialImages.length > 0) {
-      setSelectedImage(initialImages[0]);
-    }
 
-    // Розрахунок початкового положення по центру сторінки
-    const containerWidth = containerRef.current.offsetWidth;
-    const containerHeight = containerRef.current.offsetHeight;
-    const centerX = window.innerWidth / 2 - containerWidth / 2;
-    const centerY = window.innerHeight / 2 - containerHeight / 2;
-
-    setPosition({ x: centerX, y: centerY });
-  }, []);
 
   const rotate = (direction) => {
     setAngle((prev) => prev + direction * (imageAreaAngle / initialImages.length));
@@ -50,42 +39,13 @@ const CircleMenu = () => {
     setSelectedImage(null);
   };
 
-  const handleMouseDown = (event) => {
-    setIsDragging(true);
-    const shiftX = event.clientX - containerRef.current.getBoundingClientRect().left;
-    const shiftY = event.clientY - containerRef.current.getBoundingClientRect().top;
-
-    const handleMouseMove = (event) => {
-      if (isDragging) {
-        const newX = event.clientX - shiftX;
-        const newY = event.clientY - shiftY;
-        setPosition({ x: newX, y: newY });
-      }
-    };
-
-    const handleMouseUp = () => {
-      setIsDragging(false);
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
-
   return (
     <div className="outer-container">
       {!isOpen ? (
         <div
           ref={containerRef}
           className="image-container"
-          onMouseDown={handleMouseDown}
-          style={{
-            position: "absolute",
-            left: position.x,
-            top: position.y,
-            cursor: isDragging ? "grabbing" : "grab",
-          }}
+
         >
           <img
             src={outerImage}
@@ -99,9 +59,8 @@ const CircleMenu = () => {
       ) : (
         <div
           className="container"
-          style={{ position: "absolute", left: position.x, top: position.y }}
           ref={containerRef}
-          onMouseDown={handleMouseDown}
+
         >
           <div className="circle-wrapper">
             <motion.div
@@ -122,11 +81,13 @@ const CircleMenu = () => {
                     style={{ position: "absolute", transform: `translate(${x}px, ${y}px)` }}
                     onClick={() => handleImageClick(src)}
                     onDragStart={(e) => e.preventDefault()}
-                    onMouseDown={handleMouseDown}
+
                   />
+
                 );
               })}
             </motion.div>
+
 
             <div className="controls">
               <button className="btn left" onClick={() => rotate(-1)}></button>
