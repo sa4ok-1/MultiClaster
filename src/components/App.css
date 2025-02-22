@@ -12,8 +12,6 @@ html {
 .image-container,
 .circle-wrapper,
 .circle-item {
-  /* user-select: none;
-  -webkit-user-drag: none; */
   cursor: grab;
 }
 
@@ -65,13 +63,65 @@ html {
 }
 
 .circle-item {
-  position: relative;
-  width: 70px;
-  height: 70px;
-  clip-path: polygon(80% 0%, 20% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  width: 80px;
+  height: 60px;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
   border-bottom: 5px solid rgb(82, 128, 15);
   transition: transform 0.5s ease-in-out, scale 0.5s ease-in-out;
   display: block;
+  overflow: hidden;
+}
+
+.circle-item:nth-child(1) {
+  left: 44%;
+  top: 5%;
+  rotate: 14deg;
+}
+.circle-item:nth-child(2) {
+  left: 21%;
+  top: 9%;
+  rotate: 324deg;
+}
+.circle-item:nth-child(3) {
+  left: 7%;
+  top: 27%;
+  rotate: 290deg;
+}
+.circle-item:nth-child(4) {
+  left: 63%;
+  top: 14%;
+  rotate: 37deg;
+}
+.circle-item:nth-child(5) {
+  left: 5%;
+  top: 51%;
+  rotate: 252deg;
+}
+.circle-item:nth-child(6) {
+  left: 17%;
+  top: 71%;
+  rotate: 217deg;
+}
+.circle-item:nth-child(7) {
+  left: 40%;
+  top: 79%;
+  rotate: 183deg;
+}
+.circle-item:nth-child(8) {
+  left: 63%;
+  top: 72%;
+  rotate: 143deg;
+}
+.circle-item:nth-child(9) {
+  left: 75%;
+  top: 53%;
+  rotate: 105deg;
+}
+.circle-item:nth-child(10) {
+  left: 75%;
+  top: 32%;
+  rotate: 74deg;
 }
 
 .circle-item::after {
@@ -85,12 +135,23 @@ html {
   transition: height 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+.circle-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgb(82, 128, 15);
+  transition: height 0.5s ease-in-out;
+}
+
 .circle-item:hover {
   scale: 1.1;
 }
 
-.circle-item:hover::after {
-  height: 15px;
+.circle-item:hover::before {
+  height: 55px;
 }
 
 .controls {
@@ -201,8 +262,8 @@ html {
 }
 
 .center-image img {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 }
 
