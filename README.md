@@ -35,7 +35,7 @@ Follow these steps to set up the project locally
     npm start
     ```
 
-## ✨ Features (Optional)
+## ✨ Features 
 
 - 🔥 Interactive Circular Menu: Displays a set of images arranged in a circle.
 - 🔄 Rotation and Selection: Users can rotate the circle menu using navigation buttons (left/right) or by dragging the outer circle.
