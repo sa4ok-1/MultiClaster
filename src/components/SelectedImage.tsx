@@ -1,9 +1,10 @@
 import React from "react";
+import { SelectedImageProps } from "./types";
 
-const SelectedImage = ({ src, onClose }) => {
+const SelectedImage: React.FC<SelectedImageProps> = ({ src, onClose }) => {
   return (
     <div className="center-image">
-      <img src={src} alt="Selected" />
+      <img className="central-img-setup" src={src} alt="Selected" />
       <button className="close-btn" onClick={onClose}>
         <span>X</span>
       </button>

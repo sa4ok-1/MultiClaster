@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { CircleProps } from "./types";
 
-const Circle = ({ images, angle, rotate, onSelectImage, onClose }) => {
+const Circle: React.FC<CircleProps> = ({ images, angle, rotate, onSelectImage, onClose }) => {
   return (
     <div className="circle-wrapper">
       <motion.div className="circle" animate={{ rotate: angle }} transition={{
