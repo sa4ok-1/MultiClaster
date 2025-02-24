@@ -1,0 +1,35 @@
+@import "variables";
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.center-circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: $white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0px 4px 8px $darkgrey;
+  z-index: 2;
+}
+
+.outer-image {
+  border: 1px solid $lightgrey;
+  box-shadow: 0px 4px 8px $darkgrey;
+  padding: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: scale 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+
+  &:hover {
+    scale: 1.5;
+    box-shadow: 0 8px 16px rgba($black, 0.3);
+  }
+}

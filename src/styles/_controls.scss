@@ -1,0 +1,77 @@
+@import "variables";
+
+.controls {
+  background-color: $white;
+  position: absolute;
+  top: 50%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+  height: 250px;
+  width: 130px;
+  overflow: hidden;
+  border-radius: 42%;
+  z-index: 2;
+}
+
+.btn {
+  position: absolute;
+  cursor: pointer;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  background-color: $lightgreen;
+  width: 60px;
+  height: 50px;
+  z-index: 3;
+  border-bottom: none;
+}
+
+.left {
+  top: 0%;
+  left: 21%;
+  transform: rotate(336deg);
+}
+
+.right {
+  top: 72%;
+  left: 24%;
+  transform: rotate(200deg);
+}
+
+.sticks-container {
+  position: absolute;
+  top: 36%;
+  left: 5%;
+  transform: translateX(0%) rotate(90deg);
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-left: 20px;
+
+  .stick {
+    width: 6px;
+    height: 50px;
+    background-color: $lightgreen;
+    transform-origin: bottom center;
+
+    @for $i from 1 through 9 {
+      &:nth-child(#{$i}) {
+        $rotation: ($i - 6) * 5deg;
+        transform: rotate($rotation);
+      }
+    }
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: $red;
+  color: $white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 4;
+}

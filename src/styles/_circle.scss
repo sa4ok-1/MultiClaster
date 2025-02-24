@@ -1,0 +1,91 @@
+@import "variables";
+
+.circle {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: $white;
+  border: 1px solid $grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .circle-item {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+    border-bottom: 5px solid $green;
+    transition: transform 0.5s ease-in-out, scale 0.5s ease-in-out;
+    display: block;
+    overflow: hidden;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        @if $i == 1 {
+          left: 44%;
+          top: 5%;
+          rotate: 14deg;
+        } @else if $i == 2 {
+          left: 21%;
+          top: 9%;
+          rotate: 324deg;
+        } @else if $i == 3 {
+          left: 7%;
+          top: 27%;
+          rotate: 290deg;
+        } @else if $i == 4 {
+          left: 63%;
+          top: 14%;
+          rotate: 37deg;
+        } @else if $i == 5 {
+          left: 5%;
+          top: 51%;
+          rotate: 252deg;
+        } @else if $i == 6 {
+          left: 17%;
+          top: 71%;
+          rotate: 217deg;
+        } @else if $i == 7 {
+          left: 40%;
+          top: 79%;
+          rotate: 183deg;
+        } @else if $i == 8 {
+          left: 63%;
+          top: 72%;
+          rotate: 143deg;
+        } @else if $i == 9 {
+          left: 75%;
+          top: 53%;
+          rotate: 105deg;
+        } @else if $i == 10 {
+          left: 75%;
+          top: 32%;
+          rotate: 74deg;
+        }
+      }
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: $green;
+      transition: height 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    &:hover {
+      scale: 1.1;
+
+      &::before {
+        height: 55px;
+      }
+    }
+  }
+}
