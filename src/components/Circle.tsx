@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CircleProps } from "./types";
+import { CircleProps } from "../services/types";
 
 const Circle: React.FC<CircleProps> = ({ images, angle, rotate, onSelectImage, onClose }) => {
   return (

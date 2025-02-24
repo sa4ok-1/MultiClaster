@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/CircleItem.module.scss';
-import { CircleItemProps } from './types';
+import { CircleItemProps } from '../services/types';
 
 const CircleItem: React.FC<CircleItemProps> = ({ item, isSelected, onClick }) => {
   return (

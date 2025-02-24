@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { OuterImageProps } from "./types";
+import { OuterImageProps } from "../services/types";
 
 const OuterImage: React.FC<OuterImageProps> = ({ src, onClick }) => {
   return (

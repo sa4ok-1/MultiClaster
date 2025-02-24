@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectedImageProps } from "./types";
+import { SelectedImageProps } from "../services/types";
 
 const SelectedImage: React.FC<SelectedImageProps> = ({ src, onClose }) => {
   return (
