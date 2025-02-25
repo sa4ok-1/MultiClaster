@@ -2,16 +2,32 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CircleProps } from "../services/types";
 
-const Circle: React.FC<CircleProps> = ({ images, angle, rotate, onSelectImage, onClose }) => {
+const Circle: React.FC<CircleProps> = ({
+  images,
+  angle,
+  rotate,
+  onSelectImage,
+  onClose,
+}) => {
   return (
     <div className="circle-wrapper">
-      <motion.div className="circle" animate={{ rotate: angle }} transition={{
-        type: "tween",
-        duration: 0.6,
-        ease: "linear",
-      }}>
+      <motion.div
+        className="circle"
+        animate={{ rotate: angle }}
+        transition={{
+          type: "tween",
+          duration: 0.6,
+          ease: "linear",
+        }}
+      >
         {images.map((src, index) => (
-          <motion.img key={index} src={src} className="circle-item" onClick={() => onSelectImage(src)} onDragStart={(e) => e.preventDefault()} />
+          <motion.img
+            key={index}
+            src={src}
+            className="circle-item"
+            onClick={() => onSelectImage(src)}
+            onDragStart={(e) => e.preventDefault()}
+          />
         ))}
       </motion.div>
 
@@ -25,7 +41,9 @@ const Circle: React.FC<CircleProps> = ({ images, angle, rotate, onSelectImage, o
         <button className="btn right" onClick={() => rotate(1)}></button>
       </div>
 
-      <button className="close-btn" onClick={onClose}>X</button>
+      <button className="close-btn" onClick={onClose}>
+        X
+      </button>
     </div>
   );
 };

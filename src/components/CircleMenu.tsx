@@ -6,8 +6,6 @@ import SelectedImage from "./SelectedImage";
 import "../styles/main.scss";
 import { initialImages } from "../services/config";
 
-
-
 const CircleMenu = () => {
   const [angle, setAngle] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -17,7 +15,13 @@ const CircleMenu = () => {
   const outerImage = "https://picsum.photos/150/150?random=10";
 
   const rotate = (direction: number) => {
-    setAngle((prev) => prev + direction * (imageAreaAngle / initialImages.length) * imagesPerRotationStep);
+    setAngle(
+      (prev) =>
+        prev +
+        direction *
+          (imageAreaAngle / initialImages.length) *
+          imagesPerRotationStep
+    );
   };
 
   return (
@@ -39,7 +43,12 @@ const CircleMenu = () => {
             onSelectImage={(src) => setSelectedImage(src)}
             onClose={() => setIsOpen(false)}
           />
-          {selectedImage && <SelectedImage src={selectedImage} onClose={() => setSelectedImage(null)} />}
+          {selectedImage && (
+            <SelectedImage
+              src={selectedImage}
+              onClose={() => setSelectedImage(null)}
+            />
+          )}
         </motion.div>
       )}
     </div>
